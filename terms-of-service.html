@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Albin CDN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+        .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="border-b border-gray-800/80 bg-gray-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="font-semibold tracking-tight">Albin <span class="text-blue-500">CDN</span></span>
+            </a>
+            <span class="text-xs text-gray-500">Effective Date: October 2026</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow w-full">
+        <div class="glass-card rounded-2xl p-8 sm:p-10 space-y-8">
+            <div>
+                <h1 class="text-3xl font-bold text-white mb-2">Terms of Service</h1>
+                <p class="text-gray-400 text-sm">Rules and guidelines governing the usage of Albin CDN static assets.</p>
+            </div>
+
+            <hr class="border-gray-800">
+
+            <section class="space-y-3">
+                <h2 class="text-lg font-semibold text-white">1. Acceptable Use</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Albin CDN is provided for serving static web assets, media, fonts, and stylesheets. Users and integrated applications must not use this service to store or distribute:
+                </p>
+                <ul class="list-disc list-inside text-gray-400 text-sm space-y-1 pl-2">
+                    <li>Malicious software, spyware, or phishing payloads</li>
+                    <li>Content that violates copyright or intellectual property rights</li>
+                    <li>Illicit or illegal material</li>
+                </ul>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-lg font-semibold text-white">2. Rate Limiting & Bandwidth Limits</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    To maintain fair performance across all users, automated rate limiting is enforced at edge locations. Excessive traffic patterns resembling abuse or DDoS attempts may result in temporary IP throttling or blocking.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-lg font-semibold text-white">3. Service Level & Availability</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Assets hosted on Albin CDN are served on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind. While high availability is intended, no guarantee of uninterrupted uptime is provided.
+                </p>
+            </section>
+
+            <section class="space-y-3">
+                <h2 class="text-lg font-semibold text-white">4. Content Takedowns</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    We reserve the right to remove any asset or block access to specific URIs without prior notice if content policy or copyright violations occur.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 py-6 text-center text-xs text-gray-500">
+        &copy; Albin Antony. All rights reserved.
+    </footer>
+
+</body>
+</html>
