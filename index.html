@@ -1,9 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Albin CDN Assets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.15);
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+    </style>
 </head>
-<body>
-    CDN Asset Server
+<div class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
+    
+    <!-- Header -->
+    <header class="border-b border-gray-800/80 bg-gray-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-9 w-9 bg-blue-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center text-blue-400">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <span class="font-semibold text-lg tracking-tight">Albin <span class="text-blue-500">CDN</span></span>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse mr-2"></span> Operational
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow w-full">
+        
+        <!-- Hero Section -->
+        <div class="text-center py-12 max-w-3xl mx-auto">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
+                <i class="fa-solid fa-bolt text-xs"></i>
+                <span>High Performance Content Delivery</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
+                Global Asset Delivery Network
+            </h1>
+            <p class="text-gray-400 text-lg">
+                Ultra-fast, reliable static asset distribution for Web Applications, Microservices, and UI Frameworks.
+            </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto mb-16">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                <input type="text" placeholder="Search CDN assets, JS libraries, CSS templates..." 
+                       class="w-full bg-gray-900/80 border border-gray-800 rounded-xl py-3.5 pl-11 pr-24 text-sm text-gray-200 focus:outline-none focus:border-blue-500 transition-colors">
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs code-font bg-gray-800 text-gray-400 px-2 py-1 rounded border border-gray-700">
+                    ⌘K
+                </span>
+            </div>
+        </div>
+
+        <!-- System Metrics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between text-gray-400 mb-3">
+                    <span class="text-xs font-medium uppercase tracking-wider">Protocol</span>
+                    <i class="fa-solid fa-shield-halved text-blue-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-white">HTTP/3 + TLS 1.3</div>
+                <p class="text-xs text-gray-500 mt-1">End-to-end encrypted routing</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between text-gray-400 mb-3">
+                    <span class="text-xs font-medium uppercase tracking-wider">Edge Caching</span>
+                    <i class="fa-solid fa-layer-group text-emerald-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-white">Smart Edge Cache</div>
+                <p class="text-xs text-gray-500 mt-1">Brotli & Gzip compressed</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl">
+                <div class="flex items-center justify-between text-gray-400 mb-3">
+                    <span class="text-xs font-medium uppercase tracking-wider">Availability</span>
+                    <i class="fa-solid fa-chart-line text-purple-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-white">99.99% Uptime</div>
+                <p class="text-xs text-gray-500 mt-1">Distributed multi-region Nodes</p>
+            </div>
+        </div>
+
+        <!-- Asset Categories -->
+        <div class="space-y-4">
+            <h2 class="text-lg font-semibold text-white mb-4">Served Resource Types</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div class="glass-card p-5 rounded-lg flex items-start space-x-4">
+                    <div class="p-2.5 bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 rounded-lg">
+                        <i class="fa-brands fa-js text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-sm text-gray-200">Scripts & Libraries</h3>
+                        <p class="text-xs text-gray-500 mt-1">Minified JS bundles, modules, and plugins</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-lg flex items-start space-x-4">
+                    <div class="p-2.5 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-lg">
+                        <i class="fa-brands fa-css3-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-sm text-gray-200">Stylesheets</h3>
+                        <p class="text-xs text-gray-500 mt-1">Global CSS, Tailwind utilities, design tokens</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-lg flex items-start space-x-4">
+                    <div class="p-2.5 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg">
+                        <i class="fa-solid fa-image text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-sm text-gray-200">Media & Images</h3>
+                        <p class="text-xs text-gray-500 mt-1">WebP/AVIF images, logos, and UI graphics</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-lg flex items-start space-x-4">
+                    <div class="p-2.5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-lg">
+                        <i class="fa-solid fa-font text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-sm text-gray-200">Typography</h3>
+                        <p class="text-xs text-gray-500 mt-1">WOFF2 web fonts and custom icons</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/80 py-6 text-center text-xs text-gray-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                &copy; Albin Antony. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
+                <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
+                <a href="#" class="hover:text-gray-300 transition-colors">Status</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
 </body>
 </html>
