@@ -1,117 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Status - Albin CDN Assets</title>
-	<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
-        .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col justify-between">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>System Status - Albin CDN Assets</title>
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon.png" />
+        <!-- Shared Site Styles -->
+        <link rel="stylesheet" href="styles.css" />
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+        </style>
+    </head>
 
-    <!-- Header -->
-    <header class="border-b border-gray-800/80 bg-gray-900/50 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors">
-                <i class="fa-solid fa-arrow-left"></i>
-                <span class="font-semibold tracking-tight">Albin <span class="text-blue-500">CDN</span></span>
-            </a>
-            <span class="text-xs text-gray-500">Live Telemetry</span>
-        </div>
-    </header>
+    <body>
+        <div class="page">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-    <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow w-full space-y-8">
-        
-        <!-- System Overall Banner -->
-        <div class="glass-card p-6 rounded-2xl border-emerald-500/30 bg-emerald-500/5 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="h-10 w-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                    <i class="fa-solid fa-circle-check text-xl"></i>
+            <header class="status-header-bar">
+                <div class="status-container status-header-inner">
+                    <a href="index.html" class="status-back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        <span class="status-brand">
+                            Albin
+                            <span class="status-brand-highlight"> CDN </span>
+                        </span>
+                    </a>
+
+                    <span class="status-header-label"> Live Telemetry </span>
                 </div>
-                <div>
-                    <h1 class="text-lg font-bold text-white">All Systems Operational</h1>
-                    <p class="text-xs text-emerald-400">Global edge network delivering assets normally</p>
-                </div>
-            </div>
-            <span class="text-xs text-gray-500">Updated 1 min ago</span>
-        </div>
+            </header>
 
-        <!-- Regional Edge Node Status -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
-            <h2 class="text-base font-semibold text-white">Edge Region Health</h2>
-            
-            <div class="space-y-4">
-                <div class="flex items-center justify-between pb-3 border-b border-gray-800">
-                    <div class="flex items-center space-x-3">
-                        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                        <span class="text-sm text-gray-200">Asia Pacific (India / Singapore)</span>
+  <!-- =====================================================
+         MAIN CONTENT
+ ====================================================== -->
+
+            <main class="status-main">
+                <div class="status-container">
+                    <div class="status-content">
+                <!-- =================================================
+                     OVERALL SYSTEM STATUS
+                ================================================== -->
+
+                        <div class="glass-card system-status-banner">
+                            <div class="system-status-content">
+                                <div class="system-status-icon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div>
+                                    <h1 class="system-status-title">All Systems Operational</h1>
+
+                                    <p class="system-status-description">
+                                        Global edge network delivering assets normally
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="system-status-updated"> Updated 1 min ago </span>
+                        </div>
+
+                <!-- =================================================
+                     REGIONAL EDGE NODE STATUS
+                ================================================== -->
+
+                        <div class="glass-card status-card">
+                            <h2 class="status-card-title">Edge Region Health</h2>
+
+                            <div class="region-list">
+                                <!-- Asia Pacific -->
+
+                                <div class="region-item">
+                                    <div class="region-name">
+                                        <span class="region-indicator"></span>
+                                        <span> Asia Pacific (India / Singapore) </span>
+                                    </div>
+                                    <span class="region-status"> Operational · 18ms </span>
+                                </div>
+
+                                <!-- North America -->
+
+                                <div class="region-item">
+                                    <div class="region-name">
+                                        <span class="region-indicator"></span>
+                                        <span> North America (US East / West) </span>
+                                    </div>
+                                    <span class="region-status"> Operational · 42ms </span>
+                                </div>
+
+                                <!-- Europe -->
+
+                                <div class="region-item">
+                                    <div class="region-name">
+                                        <span class="region-indicator"></span>
+                                        <span> Europe (Frankfurt / London) </span>
+                                    </div>
+                                    <span class="region-status"> Operational · 35ms </span>
+                                </div>
+
+                                <!-- SSL / TLS -->
+
+                                <div class="region-item">
+                                    <div class="region-name">
+                                        <span class="region-indicator"></span>
+                                        <span> SSL / TLS Certificate Engine </span>
+                                    </div>
+                                    <span class="region-status"> Valid (HTTP/3) </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- =================================================
+                     HISTORICAL PERFORMANCE
+                ================================================== -->
+
+                        <div class="glass-card status-card">
+                            <div class="history-header">
+                                <h2 class="history-title">90-Day Service History</h2>
+                                <span class="history-availability"> 99.99% Availability </span>
+                            </div>
+
+                            <div class="history-bars">
+                                <div class="history-bar" title="Day 1: Operational"></div>
+                                <div class="history-bar" title="Day 2: Operational"></div>
+                                <div class="history-bar" title="Day 3: Operational"></div>
+                                <div class="history-bar" title="Day 4: Operational"></div>
+                                <div class="history-bar" title="Day 5: Operational"></div>
+                                <div class="history-bar" title="Day 6: Operational"></div>
+                                <div class="history-bar" title="Day 7: Operational"></div>
+                                <div class="history-bar" title="Today: Operational"></div>
+                            </div>
+
+                            <div class="history-labels">
+                                <span> 90 days ago </span>
+                                <span> Today </span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Operational · 18ms</span>
                 </div>
+            </main>
 
-                <div class="flex items-center justify-between pb-3 border-b border-gray-800">
-                    <div class="flex items-center space-x-3">
-                        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                        <span class="text-sm text-gray-200">North America (US East / West)</span>
-                    </div>
-                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Operational · 42ms</span>
-                </div>
+ <!-- =====================================================
+ FOOTER
+ ====================================================== -->
 
-                <div class="flex items-center justify-between pb-3 border-b border-gray-800">
-                    <div class="flex items-center space-x-3">
-                        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                        <span class="text-sm text-gray-200">Europe (Frankfurt / London)</span>
+            <footer class="site-footer">
+                <div class="container footer-inner">
+                    <div>
+                        &copy; <span id="current-year"></span>
+                        Albin Antony. All rights reserved.
                     </div>
-                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Operational · 35ms</span>
-                </div>
 
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-3">
-                        <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                        <span class="text-sm text-gray-200">SSL / TLS Certificate Engine</span>
+                    <div class="footer-links">
+                        <a href="privacy-policy.html" class="footer-link"> Privacy </a>
+                        <a href="terms-of-service.html" class="footer-link"> Terms </a>
+                        <a href="status.html" class="footer-link"> Status </a>
                     </div>
-                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Valid (HTTP/3)</span>
                 </div>
-            </div>
+            </footer>
         </div>
 
-        <!-- Historical Performance -->
-        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
-            <div class="flex justify-between items-center">
-                <h2 class="text-base font-semibold text-white">90-Day Service History</h2>
-                <span class="text-xs text-gray-400">99.99% Availability</span>
-            </div>
-            
-            <div class="flex items-center space-x-1 pt-2">
-                <!-- Visual bar indicators representing status -->
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 1: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 2: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 3: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 4: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 5: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 6: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Day 7: Operational"></div>
-                <div class="h-8 flex-1 bg-emerald-500/30 rounded-sm hover:bg-emerald-400 transition-colors" title="Today: Operational"></div>
-            </div>
-            <div class="flex justify-between text-xs text-gray-500">
-                <span>90 days ago</span>
-                <span>Today</span>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-800/80 py-6 text-center text-xs text-gray-500">
-        &copy; Albin Antony. All rights reserved.
-    </footer>
-
-</body>
+<!-- Current Year -->
+        <script>
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        </script>
+    </body>
 </html>
