@@ -80,9 +80,11 @@
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
                 <input type="text" placeholder="Search CDN assets, JS libraries, CSS templates..." 
                        class="w-full bg-gray-900/80 border border-gray-800 rounded-xl py-3.5 pl-11 pr-24 text-sm text-gray-200 focus:outline-none focus:border-blue-500 transition-colors">
-                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs code-font bg-gray-800 text-gray-400 px-2 py-1 rounded border border-gray-700">
-                    ⌘K
-                </span>
+                <span
+					id="shortcut-key"
+					class="absolute right-3 top-1/2 -translate-y-1/2 text-xs code-font bg-gray-800 text-gray-400 px-2 py-1 rounded border border-gray-700">
+					Ctrl K
+				</span>
             </div>
         </div>
 
@@ -170,7 +172,7 @@
     <footer class="border-t border-gray-800/80 py-6 text-center text-xs text-gray-500">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-                &copy; Albin Antony. All rights reserved.
+                &copy; <span id="current-year"></span> Albin Antony. All rights reserved.
             </div>
             <div class="flex space-x-6">
                 <a href="privacy-policy.html" class="hover:text-gray-300 transition-colors">Privacy</a>
@@ -181,5 +183,24 @@
     </footer>
 
 </div>
+
+<script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+	
+	const isMac = navigator.platform.toUpperCase().includes("MAC");
+    document.getElementById("shortcut-key").textContent =
+        isMac ? "⌘K" : "Ctrl K";
+    document.addEventListener("keydown", (event) => {
+        const modifier = isMac ? event.metaKey : event.ctrlKey;
+
+        if (modifier && event.key.toLowerCase() === "k") {
+            event.preventDefault();
+
+            // Open your search / command palette here
+            console.log("Search opened");
+        }
+    });
+</script>
+
 </body>
 </html>
